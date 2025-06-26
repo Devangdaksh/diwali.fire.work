@@ -189,3 +189,13 @@ class Circle {
 // Event listeners for page load and resize
 window.addEventListener("DOMContentLoaded", init);
 window.addEventListener("resize", resizeReset);
+
+// Popup functionality
+window.addEventListener("DOMContentLoaded", function () {
+  const closeBtn = document.querySelector('.close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      document.getElementById('popup').classList.remove('active');
+    });
+  }
+});
