@@ -186,12 +186,10 @@ class Circle {
   }
 }
 
-// Event listeners for page load and resize
-window.addEventListener("DOMContentLoaded", init);
-window.addEventListener("resize", resizeReset);
-
-// Popup functionality
+// Event listener for DOM load
 window.addEventListener("DOMContentLoaded", function () {
+  init(); // Start fireworks
+
   const closeBtn = document.querySelector('.close-btn');
   if (closeBtn) {
     closeBtn.addEventListener('click', function () {
@@ -199,3 +197,6 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Resize event remains separate
+window.addEventListener("resize", resizeReset);
